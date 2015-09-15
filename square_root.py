@@ -2,6 +2,8 @@ import math
 from random import randint
 
 def approx_sqrt(num):
+    if num == '':
+        return "I'm sorry Dave, I'm afraid I can't do that."
     for char in num:
         if (ord(char) < 48 or ord(char) > 57) or int(num) < 1:
             return "I'm sorry Dave, I'm afraid I can't do that."
