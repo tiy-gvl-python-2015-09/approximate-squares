@@ -1,4 +1,3 @@
-import math
 from random import randint
 
 def approx_sqrt(num):
@@ -21,3 +20,5 @@ def approx_sqrt(num):
     return iteration_guess
 
 print(approx_sqrt(input('What number do you want to square root? ')))
+
+# Python adopted the convention used by electrical engineers. In that field, i is used to represent current and use j as the square root of -1.
