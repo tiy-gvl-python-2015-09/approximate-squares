@@ -1,10 +1,13 @@
 N = float(input())
 x = float(N/2)
 runs = 0
+y = []
 
 while x **2 > N + 0.001:
     runs +=1
     x = ((N / x)+x)/2
+    y.append([round(x,3)])
 
 print("The square root of " + str(N) + " is " + "%.2f" % x + ".")
 print("We did " + str(runs) + " calculations to get this answer.")
+print("These were our guesses: " + str(y))
