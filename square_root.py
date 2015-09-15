@@ -6,7 +6,9 @@ user_num = input("Enter a positive number: ")
 try:
     user_num = float(user_num)
     if user_num < 0:
-        print("No negative numbers!")
+        user_num = abs(complex(user_num).real)
+    else:
+        user_num = float(user_num)
     guess = user_num/2
     error = 1
     counter = 0
