@@ -14,16 +14,22 @@ approximate_square_root()
 
 
 def better_approximate_square_root():
-    user_number = float(input("Enter a positive number: "))
-    guess = user_number/2
-    count = 1
+    user_input = input("Enter a positive number: ")
     
-    while abs((user_number - (guess**2))) > 0.01:
-        print("Square root guess number {}: {}".format(count, guess))
-        new_guess = (guess + (user_number/guess))/2
-        guess = new_guess
-        count += 1
+    if float(user_input) < 0:
+        print("That's a negative number. Please try again.")
+        better_approximate_square_root()
+    else:
+        user_number = float(user_input)
+        guess = user_number/2
+        count = 1
+    
+        while abs((user_number - (guess**2))) > 0.01:
+            print("Square root guess number {}: {}".format(count, guess))
+            new_guess = (guess + (user_number/guess))/2
+            guess = new_guess
+            count += 1
         
-    print("The square root of {} is {}".format(user_number, guess))
-
+        print("The square root of {} is {}".format(user_number, guess))
+        
 better_approximate_square_root()
