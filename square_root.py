@@ -12,17 +12,14 @@ def approx_sqrt(num):
     previous_guess = 0.0
     iteration = 0
     iteration_guess = []
-    target = int(num)
-    if target > 0:
-        while float("{0:.3}".format(previous_guess)) != float("{0:.3}".format(guess)):
-            previous_guess, guess = guess, (1/2)*(guess+(target/guess))
-            iteration +=1
+    target = abs(int(num))
+
+    while float("{0:.3}".format(previous_guess)) != float("{0:.3}".format(guess)):
+        previous_guess, guess = guess, (1/2)*(guess+(target/guess))
+        iteration +=1
+        if int(num) > 0:
             iteration_guess.append([iteration, guess])
-    else:
-        target = abs(target)
-        while float("{0:.3}".format(previous_guess)) != float("{0:.3}".format(guess)):
-            previous_guess, guess = guess, (1/2)*(guess+(target/guess))
-            iteration +=1
+        if int(num) < 0:
             iteration_guess.append([iteration, guess*1j])
     return iteration_guess
 
