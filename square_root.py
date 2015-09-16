@@ -1,3 +1,4 @@
+import cmath
 from random import randint
 
 def approx_sqrt(num):
@@ -22,7 +23,7 @@ def approx_sqrt(num):
         while float("{0:.3}".format(previous_guess)) != float("{0:.3}".format(guess)):
             previous_guess, guess = guess, (1/2)*(guess+(target/guess))
             iteration +=1
-            iteration_guess.append([iteration, complex(guess,1)])
+            iteration_guess.append([iteration, guess*1j])
     return iteration_guess
 
 print(approx_sqrt(input('What number do you want to square root? ')))
