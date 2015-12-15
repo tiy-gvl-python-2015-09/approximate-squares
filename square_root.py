@@ -21,3 +21,6 @@ while previous_number - previous_number_two > abs(.01):
     previous_number = (previous_number + number/previous_number) / 2
     previous_number_two = (previous_number + number/previous_number) / 2
     print(previous_number_two)
+
+def product(x,y):
+    return x * y
